@@ -7,7 +7,7 @@ do
     mkdir ./five/dir$num
     for i in {1..4..1}
     do
-	touch file$num
+	touch ./five/dir$num/file$num
 	for idx in {0..$num..1}
 	do
 	    echo $num > ./five/dir$num/file$num
