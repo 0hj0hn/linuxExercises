@@ -13,13 +13,14 @@ else
     file="/dev/stdin"
 fi
 
-cut -d, -f"$column" "$file" | tail -n +2 | {
+
+cut -d "," -f"$column" "$file" | tail -n +2 | {
     sum=0
     count=0
     while read val; do
-	sum=$(($sum + val))
+	sum=$(($sum + $val))
 	count=$(($count + 1))
     done
 
-    echo "$sum / $count" | bc
+    echo "$sum / $count" | bc -l
 }
